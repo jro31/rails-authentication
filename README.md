@@ -1,4 +1,4 @@
-Working through the [React + Rails API Authentication](https://youtube.com/playlist?list=PLgYiyoyNPrv_yNp5Pzsx0A3gQ8-tfg66j) course, this repo includes commits of examples of:
+The **Rails** repo of the [React + Rails API Authentication](https://youtube.com/playlist?list=PLgYiyoyNPrv_yNp5Pzsx0A3gQ8-tfg66j) course (the React repo can be found [here](https://github.com/jro31/react-auth-app)), it includes commits of examples of:
 
 * Part 1 - [Ruby on Rails App Creation and Initial Configuration](https://youtu.be/z18zLCAg7UU)
   * Creating the Rails app with `rails new rails-authentication --database=postgresql` - [Commit link](https://github.com/jro31/rails-authentication/commit/97888a643c6f55d6593a258f1e73c69f6ed950a6)
