@@ -19,3 +19,11 @@ Working through the [React + Rails API Authentication](https://youtube.com/playl
     * This finds the user and tries to authenticate them
     * If successful, it creates a cookie and returns the user
     * If unsuccessful, it returns a 401
+* Part 3 - [Implementing the Registration Controller and Final Authentication Features in Rails](https://youtu.be/_rdNv5ijzrk)
+  * Creating the registrations controller `create` action and adding `skip_before_action :verify_authenticity_token` to application controller - [Commit link](https://github.com/jro31/rails-authentication/commit/c4fc8f7c0186789289123aec6333ff9c33d0bcb8)
+    * You should at this point (with the server running) be able to run the following commands:
+      * To create a session (making sure that the credentials match those of an existing user):
+        * `curl --header "Content-Type: application/json" --request POST --data '{"user": { "email": "z@dev.com", "password": "asdfasdf" } }' http://localhost:3000/sessions`
+      * To create a user:
+        * `curl --header "Content-Type: application/json" --request POST --data '{"user": { "email": "y@dev.com", "password": "12341234", "password_confirmation": "12341234" } }' http://localhost:3000/registrations`
+  * Creating the sessions controller `logged_in` and `logout` actions, and adding a `CurrentUserConcern` which sets `@current_user` - [Commit link](https://github.com/jro31/rails-authentication/commit/9f8f14eda8adb1eb0dd3e4c47ac9aa06b6b68d48)
