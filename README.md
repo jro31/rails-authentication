@@ -27,3 +27,6 @@ Working through the [React + Rails API Authentication](https://youtube.com/playl
       * To create a user:
         * `curl --header "Content-Type: application/json" --request POST --data '{"user": { "email": "y@dev.com", "password": "12341234", "password_confirmation": "12341234" } }' http://localhost:3000/registrations`
   * Creating the sessions controller `logged_in` and `logout` actions, and adding a `CurrentUserConcern` which sets `@current_user` - [Commit link](https://github.com/jro31/rails-authentication/commit/9f8f14eda8adb1eb0dd3e4c47ac9aa06b6b68d48)
+* Part 4 - [Configuring the Rails API Session Store to Work in All Environments](https://youtu.be/1JRdaemJNh4)
+  * Update the session store to work in all environments - [Commit link](https://github.com/jro31/rails-authentication/commit/23372589594ae30394320423a4280a118f996ff1)
+    * It previously would have only worked in production
