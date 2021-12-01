@@ -8,3 +8,14 @@ Working through the [React + Rails API Authentication](https://youtube.com/playl
   * Creating the `session_store.rb` initializer file - [Commit link](https://github.com/jro31/rails-authentication/commit/a27d6a327aca4a087b9e629f5dcbbc25d699ae41)
   * Creating a route and rendering some json to check that the app is working - [Commit link](https://github.com/jro31/rails-authentication/commit/82f966ae3034591d6a22eea0311788ee26e18d46)
     * At this point, running `rails s` and going to `http://localhost:3000/` should return `{"status":"It's working"}`
+* Part 2 - [Building the User Model and Session Controller for the Rails API Authentication App](https://youtu.be/FwfsMv2kSX4)
+  * Generating the `User` model and adding `has_secure_password` - [Commit link](https://github.com/jro31/rails-authentication/commit/e169a79327eb43f85e69bd10a973979446edfdde)
+    * Generate the `User` model with `rails g model User email password_digest` (then run `rails db:migrate`)
+    * Add `has_secure_password` and the email validations to the `User` model
+      * At this point you should be able to generate a user in the console with, for example, `User.create!(email: 'z@dev.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')`
+        * The `password_digest` field of the generated user should be some random string
+        * The `password` and `password_confirmation` fields are expected by Rails because we added `has_secure_password` to the user
+  * Creating the sessions controller `create` action - [Commit link](https://github.com/jro31/rails-authentication/commit/2851bef981ecdc4e71adea19a0c2dd64e637cd38)
+    * This finds the user and tries to authenticate them
+    * If successful, it creates a cookie and returns the user
+    * If unsuccessful, it returns a 401
